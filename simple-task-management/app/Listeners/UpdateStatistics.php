@@ -5,11 +5,16 @@ namespace App\Listeners;
 use App\Events\TaskCreated;
 use App\Models\Statistics;
 use http\Client\Curl\User;
+use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
 
-class UpdateStatistics
+class UpdateStatistics implements ShouldQueue
 {
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
     /**
      * Create the event listener.
      */
