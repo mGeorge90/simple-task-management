@@ -20,4 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::middleware('api:auth')->group(function () {
     Route::post('task', 'TaskController@store');
+    Route::get('statistics', 'StatisticsController@index');
 });
